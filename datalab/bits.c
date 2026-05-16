@@ -140,7 +140,9 @@ NOTES:
  *   Max ops: 14
  *   Rating: 1
  */
-int bitXor(int x, int y) { return 2; }
+int bitXor(int x, int y) {
+   return (x & ~y) | (y & ~x);
+ }
 /*
  * tmin - return minimum two's complement integer
  *   Legal ops: ! ~ & ^ | + << >>
@@ -173,7 +175,9 @@ int isTmax(int x) {
  *   Max ops: 12
  *   Rating: 2
  */
-int allOddBits(int x) { return 2; }
+int allOddBits(int x) { 
+   return !(x & 0x99999999);
+ }
 /*
  * negate - return -x
  *   Example: negate(1) = -1.
